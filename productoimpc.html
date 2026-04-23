@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle del Producto – NovaShop</title>
+  <link rel="stylesheet" href="styles/prdimcstyle.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+<header class="navbar">
+  <a href="index.html" class="logo">NovaShop</a>
+
+  <div class="search-wrap">
+    <input type="search" placeholder="Search"/>
+    <button class="search-btn" aria-label="Buscar">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="header-right">
+    <a href="/Src/carrito.html" class="nav-icon-link">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+    </a>
+    <a href="/Src/miperfil.html" class="nav-icon-link">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </a>
+    <a href="/Src/iniciarsis.html" class="btn-login-nav">Iniciar sesion</a>
+    <a href="/Src/registrarse.html" class="btn-register-nav">Registrarse</a>
+  </div>
+</header>
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="page-wrapper">
+
+    <!-- Enlace volver -->
+    <a href="/Src/categorias.html" class="back-link">← Volver a Productos</a>
+
+    <!-- Tarjeta de detalle (se llena con JS) -->
+<div id="producto-container" class="product-detail">
+  <div class="showbox" id="spinner">
+    <div class="loader">
+      <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <!-- Datos de productos + lógica -->
+  <script src="js/productos.js"></script>
+  <script src="js/producto.js"></script>
+
+
+
+
+
+
+  <footer>
+  <div class="footer-grid">
+ 
+    <div class="footer-col">
+      <h4>NovaShop</h4>
+      <p>Su tienda única para productos de calidad a excelentes precios.</p>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul class="footer-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Carrito</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul class="footer-links">
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p class="contact-item">Correo: novashopp@gmail.com</p>
+      <p class="contact-item">Telefono: (+57) 322 5714588</p>
+      <p class="contact-item">Direccion: Cra. 26 #28-54, Soledad, Atlántico</p>
+    </div>
+ 
+  </div>
+  <div class="footer-bottom">© 2026 NovaShop. Todos los derechos reservados.</div>
+</footer>
+
+</body>
+</html>
