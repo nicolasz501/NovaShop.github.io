@@ -12,6 +12,11 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+section {
+    width: 100%;
+    max-width: 100%;
+}
+
 /* --- NAVBAR  --- */
 header.navbar {
     background: #fff;
