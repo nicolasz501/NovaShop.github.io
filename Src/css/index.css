@@ -305,6 +305,10 @@ li {
   font-size: 1em;
 }
 
+li::marker {
+    font-size: 0px;
+}
+
 .card p {
   color: #014eaf;
   font-weight: bold;
