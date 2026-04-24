@@ -147,3 +147,18 @@ function mostrarError() {
     </div>
   `;
 }
+
+function finalizarCompra() {
+    // Verificamos si hay algo en el carrito antes de dejarlo pasar
+    const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
+    
+    if (carrito.length === 0) {
+        alert("No hay productos en tu pedido para finalizar.");
+        window.location.href = 'index.html';
+        return;
+    }
+
+    // Si todo está bien, redirigimos a la página de gracias
+    // Asegúrate de que el nombre coincida con tu archivo: gracias.html
+    window.location.href = 'gracias.html';
+}

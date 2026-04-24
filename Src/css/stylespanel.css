@@ -221,3 +221,127 @@ a.logo {
  text-decoration: underline rgb(1 78 175);
  font-size: 33px;
 }
+
+/* =============================================
+   MEDIA QUERIES — TABLET (max-width: 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+
+  header.navbar {
+    padding: 0.8rem 3%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .search-wrap {
+    width: 280px;
+    transform: none;
+    order: 3;
+    flex: 1 1 100%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  .header-right {
+    gap: 1rem;
+  }
+
+  .panel-box {
+    width: 260px;
+    padding: 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  footer {
+    padding: 36px 28px 20px;
+  }
+}
+
+/* =============================================
+   MEDIA QUERIES — MOBILE (max-width: 640px)
+   ============================================= */
+@media (max-width: 600px) {
+
+  /* Navbar */
+  header.navbar {
+    padding: 0.7rem 4%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  a.logo {
+    font-size: 1.3rem;
+  }
+
+  .search-wrap {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    transform: none;
+    margin: 0;
+    height: 38px;
+  }
+
+  .header-right {
+    gap: 0.8rem;
+  }
+
+  .btn-login-nav {
+    font-size: 0.82rem;
+  }
+
+  .btn-register-nav {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Panel */
+  .panel-container {
+    min-height: calc(100vh - 160px);
+    padding: 24px 16px;
+    align-items: flex-start;
+  }
+
+  .panel-box {
+    width: 100%;
+    max-width: 360px;
+    padding: 24px 18px;
+    border-radius: 10px;
+  }
+
+  .panel-item {
+    margin: 14px 0;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 28px 16px 16px;
+    margin-top: 10px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 0.78rem;
+    padding-top: 16px;
+  }
+}

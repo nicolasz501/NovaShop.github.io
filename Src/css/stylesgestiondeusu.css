@@ -228,3 +228,107 @@ a.logo {
  text-decoration: underline rgb(1 78 175);
  font-size: 33px;
 }
+
+
+
+/* --- MEDIA QUERY TABLET --- */
+@media (max-width: 1024px) {
+
+    /* NAVBAR */
+    header.navbar {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 10px;
+        padding: 10px 4%;
+    }
+
+    .search-wrap {
+        width: 100%;
+        transform: none;
+        order: 3;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* CONTENEDOR */
+    .admin-container {
+        padding: 30px 4%;
+    }
+
+    /* TABLA */
+    table {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+
+
+/* --- MEDIA QUERY MOBILE --- */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .btn-login-nav,
+    .btn-register-nav {
+        display: none;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    /* BUSCADOR */
+    .search-wrap {
+        height: 35px;
+        padding: 0 10px;
+    }
+
+    .search-wrap input {
+        font-size: 0.8rem;
+    }
+
+    /* CONTENEDOR */
+    .admin-container {
+        padding: 20px 3%;
+    }
+
+    /* 🔥 TABLA RESPONSIVE REAL */
+    table {
+        display: block;
+        overflow-x: auto; /* scroll horizontal */
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    /* LINK */
+    .back-link {
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

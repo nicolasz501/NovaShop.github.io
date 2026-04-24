@@ -261,3 +261,138 @@ a.logo {
  text-decoration: underline rgb(1 78 175);
  font-size: 33px;
 }
+
+/* --- MEDIA QUERY TABLET --- */
+@media (max-width: 1024px) {
+
+    /* NAVBAR */
+    header.navbar {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 10px;
+        padding: 10px 4%;
+    }
+
+    .search-wrap {
+        width: 100%;
+        transform: none;
+        order: 3;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* CONTENEDOR ADMIN */
+    .admin-container {
+        flex-direction: column; /* sidebar arriba */
+        margin-top: 80px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .sidebar a {
+        font-size: 14px;
+    }
+
+    /* CONTENIDO */
+    .admin-content {
+        padding: 20px;
+    }
+
+    /* CARDS */
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        height: 140px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+
+/* --- MEDIA QUERY MOBILE --- */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .btn-login-nav,
+    .btn-register-nav {
+        display: none;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    /* BUSCADOR */
+    .search-wrap {
+        height: 35px;
+        padding: 0 10px;
+    }
+
+    .search-wrap input {
+        font-size: 0.8rem;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .sidebar h3 {
+        font-size: 13px;
+    }
+
+    /* CONTENIDO */
+    .admin-content {
+        padding: 15px;
+    }
+
+    /* CARDS */
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        height: 120px;
+    }
+
+    .card .icon {
+        font-size: 25px;
+    }
+
+    .card p {
+        font-size: 11px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

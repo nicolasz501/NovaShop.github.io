@@ -461,10 +461,16 @@ a.logo {
    Aplica desde tablets grandes hacia abajo
    Mantiene intacta la versión desktop
    ========================================================= */
+/* =========================================================
+   RESPONSIVE — TABLET (max-width: 1024px)
+   ========================================================= */
 @media (max-width: 1024px) {
+
   header.navbar {
     padding: 0.8rem 4%;
-    gap: 20px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .logo,
@@ -474,8 +480,12 @@ a.logo {
   }
 
   .search-wrap {
-    width: 320px;
+    width: 280px;
     transform: none;
+    order: 3;
+    flex: 1 1 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .header-right {
@@ -537,6 +547,7 @@ a.logo {
 
   footer {
     margin-top: 100px;
+    padding: 36px 28px 20px;
   }
 
   .footer-grid {
@@ -545,112 +556,33 @@ a.logo {
   }
 }
 
-
 /* =========================================================
-   RESPONSIVE TABLET PEQUEÑA
-   Para tablets verticales
-   ========================================================= */
-@media (max-width: 820px) {
-  header.navbar {
-    height: auto;
-    min-height: 70px;
-    padding: 0.8rem 4%;
-  }
-
-  .search-wrap {
-    display: none;
-  }
-
-  .btn-login-nav,
-  .btn-register-nav {
-    display: none;
-  }
-
-  .header-right {
-    gap: 0.9rem;
-  }
-
-  .nav-icon-link svg {
-    width: 25px;
-    height: 25px;
-  }
-
-  .hero {
-    padding: 70px 5%;
-    min-height: 260px;
-  }
-
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 12px;
-  }
-
-  .hero-text li {
-    font-size: 0.98rem;
-    line-height: 1.55;
-  }
-
-  .btn {
-    margin-top: 16px;
-    padding: 11px 20px;
-  }
-
-  .productos {
-    padding: 42px 5%;
-  }
-
-  .productos h2 {
-    font-size: 36px;
-    margin-bottom: 26px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
-  }
-
-  .card img {
-    height: 210px;
-    object-fit: cover;
-  }
-
-  .ver-todo {
-    margin-top: 34px;
-  }
-
-  .ver-todo a {
-    padding: 16px 18px;
-  }
-
-  footer {
-    padding: 42px 28px 24px;
-    margin-top: 80px;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE MOBILE
-   Para celulares
+   RESPONSIVE — MOBILE (max-width: 600px)
    ========================================================= */
 @media (max-width: 600px) {
+
+  /* Navbar */
   header.navbar {
     padding: 0.75rem 5%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .logo,
   a.logo {
     font-size: 24px;
     -webkit-text-stroke: 1.1px rgb(1 78 175);
+  }
+
+  .search-wrap {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    transform: none;
+    margin: 0;
+    height: 38px;
+    max-width: 100%;
   }
 
   .header-right {
@@ -662,6 +594,16 @@ a.logo {
     height: 24px;
   }
 
+  .btn-login-nav {
+    font-size: 0.82rem;
+  }
+
+  .btn-register-nav {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Hero */
   .hero {
     padding: 56px 5%;
     min-height: 240px;
@@ -683,6 +625,7 @@ a.logo {
     font-size: 0.88rem;
   }
 
+  /* Productos */
   .productos {
     padding: 38px 5%;
   }
@@ -729,8 +672,9 @@ a.logo {
     font-size: 0.95rem;
   }
 
+  /* Footer */
   footer {
-    padding: 38px 22px 22px;
+    padding: 28px 16px 16px;
     margin-top: 60px;
   }
 
@@ -742,94 +686,5 @@ a.logo {
   .footer-bottom {
     margin-top: 18px;
     font-size: 0.78rem;
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE MOBILE PEQUEÑO
-   Para pantallas angostas
-   ========================================================= */
-@media (max-width: 420px) {
-  .logo,
-  a.logo {
-    font-size: 22px;
-  }
-
-  .header-right {
-    gap: 0.6rem;
-  }
-
-  .nav-icon-link svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .hero {
-    padding: 46px 5%;
-    min-height: 220px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.55rem;
-  }
-
-  .hero-text li {
-    font-size: 0.9rem;
-  }
-
-  .productos {
-    padding: 34px 5%;
-  }
-
-  .productos h2 {
-    font-size: 26px;
-  }
-
-  .card img {
-    height: 205px;
-  }
-
-  .card p {
-    font-size: 17px;
-  }
-
-  footer {
-    padding: 34px 20px 22px;
-  }
-
-  .footer-col h4,
-  .footer-links a,
-  .footer-col p,
-  .contact-item {
-    font-size: 0.82rem;
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE MOBILE MUY PEQUEÑO
-   Evita desbordes en celulares muy estrechos
-   ========================================================= */
-@media (max-width: 360px) {
-  .logo,
-  a.logo {
-    font-size: 20px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.42rem;
-  }
-
-  .hero-text li {
-    font-size: 0.86rem;
-  }
-
-  .card img {
-    height: 185px;
-  }
-
-  .ver-todo a {
-    font-size: 0.88rem;
   }
 }

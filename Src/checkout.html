@@ -1,251 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finalizar Compra - NovaShop</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/stylescarrito.css">  <style>
-        /* Estilos específicos para Checkout que complementan los tuyos */
-        .checkout-main {
-            padding: 40px 5%;
-            background: #f7f8fa;
-            min-height: 80vh;
-        }
-        .checkout-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .billing-card, .payment-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            margin-bottom: 20px;
-        }
-        .form-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .form-group {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .form-group label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #444;
-        }
-        .form-group input, .form-group select {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            outline: none;
-            transition: border 0.3s;
-        }
-        .form-group input:focus {
-            border-color: var(--primary-blue);
-        }
-        .payment-option {
-            border: 2px solid #eee;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .payment-option.active {
-            border-color: var(--primary-blue);
-            background: #f0f7ff;
-        }
-        .addi-badge {
-            background: #eef2ff;
-            color: #4f46e5;
-            padding: 20px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            border-left: 4px solid #4f46e5;
-        }
-        @media (max-width: 850px) {
-            .checkout-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/stylescarrito.css" />
+    <link rel="stylesheet" href="/Src/css/stylescheckout.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="../index.html" class="logo">NovaShop</a>
+      <div class="search-wrap">
+        <input type="search" placeholder="Search" />
+        <button class="search-btn">
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+      </div>
+      <div class="header-right">
+        <a href="carrito.html" class="nav-icon-link">
+          <svg
+            width="26"
+            height="26"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
+        </a>
+        <a href="iniciarsis.html" class="btn-login-nav">Iniciar sesión</a>
+      </div>
+    </header>
 
-<header class="navbar">
-  <a href="../index.html" class="logo">NovaShop</a>
-  <div class="search-wrap">
-    <input type="search" placeholder="Search"/>
-    <button class="search-btn">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    </button>
-  </div>
-  <div class="header-right">
-    <a href="carrito.html" class="nav-icon-link">
-        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-    </a>
-    <a href="iniciarsis.html" class="btn-login-nav">Iniciar sesión</a>
-  </div>
-</header>
-
-<main class="checkout-main">
-    <div class="checkout-grid">
-        
+    <main class="checkout-main">
+      <div class="checkout-grid">
         <div class="checkout-left">
-            <h1 class="cart-heading">Detalles de facturación</h1>
-            <div class="billing-card">
-                <form id="checkout-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Nombre *</label>
-                            <input type="text" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Apellidos *</label>
-                            <input type="text" required>
-                        </div>
-                    </div>
-                    <div class="form-group" style="margin-bottom:15px;">
-                        <label>Cédula / NIT *</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group" style="margin-bottom:15px;">
-                        <label>Dirección de la calle *</label>
-                        <input type="text" placeholder="Número de casa y nombre de calle" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Departamento *</label>
-                            <select required>
-                                <option value="">Selecciona...</option>
-                                <option value="atlantico">Atlántico</option>
-                                <option value="bolivar">Bolívar</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Ciudad *</label>
-                            <input type="text" required>
-                        </div>
-                    </div>
-                </form>
-            </div>
+          <h1 class="cart-heading">Detalles de facturación</h1>
+          <div class="billing-card">
+            <form id="checkout-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Nombre *</label>
+                  <input type="text" required />
+                </div>
+                <div class="form-group">
+                  <label>Apellidos *</label>
+                  <input type="text" required />
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom: 15px">
+                <label>Cédula / NIT *</label>
+                <input type="text" required />
+              </div>
+              <div class="form-group" style="margin-bottom: 15px">
+                <label>Dirección de la calle *</label>
+                <input
+                  type="text"
+                  placeholder="Número de casa y nombre de calle"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Departamento *</label>
+                  <select required>
+                    <option value="">Selecciona...</option>
+                    <option value="atlantico">Atlántico</option>
+                    <option value="bolivar">Bolívar</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Ciudad *</label>
+                  <input type="text" required />
+                </div>
+              </div>
+            </form>
+          </div>
 
-            <h2 class="cart-heading" style="font-size: 1.2rem;">Método de Pago</h2>
-            <div class="payment-card">
-                <div class="payment-option active">
-                    <input type="radio" name="pay" id="addi" checked>
-                    <label for="addi">Paga a cuotas con <strong>Addi</strong></label>
-                </div>
-                <div class="addi-badge">
-                    <p>✨ Cuotas desde 0% de interés.</p>
-                    <p>📱 Solo necesitas tu cédula y WhatsApp.</p>
-                </div>
-                <div class="payment-option">
-                    <input type="radio" name="pay" id="wompi">
-                    <label for="wompi">Tarjeta de Crédito / PSE (Wompi)</label>
-                </div>
+          <h2 class="cart-heading" style="font-size: 1.2rem">Método de Pago</h2>
+          <div class="payment-card">
+            <div class="payment-option active">
+              <input type="radio" name="pay" id="addi" checked />
+              <label for="addi">Paga a cuotas con <strong>Addi</strong></label>
             </div>
+            <div class="addi-badge">
+              <p>✨ Cuotas desde 0% de interés.</p>
+              <p>📱 Solo necesitas tu cédula y WhatsApp.</p>
+            </div>
+            <div class="payment-option">
+              <input type="radio" name="pay" id="wompi" />
+              <label for="wompi">Tarjeta de Crédito / PSE (Wompi)</label>
+            </div>
+          </div>
         </div>
 
         <div class="checkout-right">
-            <div class="cart-summary">
-                <h2>Tu pedido</h2>
-                <div id="order-items-list">
-                    </div>
-                <div class="summary-divider"></div>
-                <div class="summary-row">
-                    <span>Subtotal</span>
-                    <span id="check-subtotal">$0.00</span>
-                </div>
-                <div class="summary-row">
-                    <span>Envío</span>
-                    <span class="envio-gratis">Gratis</span>
-                </div>
-                <div class="summary-divider"></div>
-                <div class="summary-row total-row">
-                    <span>Total</span>
-                    <span id="check-total" style="color: var(--primary-blue);">$0.00</span>
-                </div>
-
-                <button class="btn-checkout btn" style="background: #000; color: #fff; width: 100%; border: none;">
-                    FINALIZAR PEDIDO
-                </button>
+          <div class="cart-summary">
+            <h2>Tu pedido</h2>
+            <div id="order-items-list"></div>
+            <div class="summary-divider"></div>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="check-subtotal">$0.00</span>
             </div>
+            <div class="summary-row">
+              <span>Envío</span>
+              <span class="envio-gratis">Gratis</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <span id="check-total" style="color: var(--primary-blue)"
+                >$0.00</span
+              >
+            </div>
+
+            <button class="btn-checkout btn" onclick="finalizarCompra()">
+              FINALIZAR PEDIDO
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NovaShop</h4>
+          <p>Su tienda única para productos de calidad a excelentes precios.</p>
         </div>
 
-    </div>
-</main>
+        <div class="footer-col">
+          <h4>Enlaces rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="/Src/index.html">Inicio</a></li>
+            <li><a href="/Src/categorias.html">Productos</a></li>
+            <li><a href="/Src/carrito.html">Carrito</a></li>
+          </ul>
+        </div>
 
-<footer>
-  <div class="footer-grid">
- 
-    <div class="footer-col">
-      <h4>NovaShop</h4>
-      <p>Su tienda única para productos de calidad a excelentes precios.</p>
-    </div>
- 
-    <div class="footer-col">
-      <h4>Enlaces rápidos</h4>
-      <ul class="footer-links">
-        <li><a href="/Src/index.html">Inicio</a></li>
-        <li><a href="/Src/categorias.html">Productos</a></li>
-        <li><a href="/Src/carrito.html">Carrito</a></li>
-      </ul>
-    </div>
- 
-    <div class="footer-col">
-      <h4>Categories</h4>
-      <ul class="footer-links">
-        <li><a href="#">Electronics</a></li>
-        <li><a href="#">Sports</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Accessories</a></li>
-      </ul>
-    </div>
- 
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <p class="contact-item">Correo: novashopp@gmail.com</p>
-      <p class="contact-item">Telefono: (+57) 322 5714588</p>
-      <p class="contact-item">Direccion: Cra. 26 #28-54, Soledad, Atlántico</p>
-    </div>
- 
-  </div>
-  <div class="footer-bottom">© 2026 NovaShop. Todos los derechos reservados.</div>
-</footer>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
 
-<script>
-    // Lógica para traer los datos del carrito que ya programaste
-    function cargarResumen() {
-        const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-        const container = document.getElementById('order-items-list');
-        let total = 0;
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p class="contact-item">Correo: novashopp@gmail.com</p>
+          <p class="contact-item">Telefono: (+57) 322 5714588</p>
+          <p class="contact-item">
+            Direccion: Cra. 26 #28-54, Soledad, Atlántico
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 NovaShop. Todos los derechos reservados.
+      </div>
+    </footer>
 
-        container.innerHTML = carrito.map(item => {
-            total += item.precio * item.cantidad;
-            return `
-                <div class="summary-row" style="font-size: 0.85rem;">
-                    <span>${item.nombre} x${item.cantidad}</span>
-                    <span>$${(item.precio * item.cantidad).toFixed(2)}</span>
-                </div>
-            `;
-        }).join('');
+    <script>
+  // ── Cargar resumen del pedido ──────────────────────────
+  function cargarResumen() {
+    const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+    const container = document.getElementById("order-items-list");
+    let total = 0;
 
-        document.getElementById('check-subtotal').textContent = `$${total.toFixed(2)}`;
-        document.getElementById('check-total').textContent = `$${total.toFixed(2)}`;
+    container.innerHTML = carrito
+      .map((item) => {
+        total += item.precio * item.cantidad;
+        return `
+          <div class="summary-row" style="font-size: 0.85rem;">
+            <span>${item.nombre} x${item.cantidad}</span>
+            <span>$${(item.precio * item.cantidad).toFixed(2)}</span>
+          </div>
+        `;
+      })
+      .join("");
+
+    document.getElementById("check-subtotal").textContent = `$${total.toFixed(2)}`;
+    document.getElementById("check-total").textContent    = `$${total.toFixed(2)}`;
+  }
+
+  // ── Finalizar compra ───────────────────────────────────
+  function finalizarCompra() {
+    const formulario = document.getElementById("checkout-form");
+
+    // 1. Validar campos obligatorios del formulario
+    if (!formulario.checkValidity()) {
+      formulario.reportValidity();
+      return;
     }
-    cargarResumen();
+
+    // 2. Verificar que el carrito no esté vacío
+    const carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+    if (carrito.length === 0) {
+      alert("No hay productos en tu pedido para finalizar.");
+      window.location.href = "../index.html";
+      return;
+    }
+
+    // 3. Limpiar carrito y redirigir a gracias.html
+    localStorage.removeItem("carrito");
+    window.location.href = "gracias.html";
+  }
+
+  // Iniciar al cargar la página
+  cargarResumen();
 </script>
-</body>
+  </body>
 </html>

@@ -280,3 +280,149 @@ a.logo {
  font-size: 33px;
 }
 
+
+/* --- MEDIA QUERIES version tablet --- */
+@media (max-width: 1024px) {
+
+    /* NAVBAR */
+    header.navbar {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 10px;
+        padding: 10px 4%;
+    }
+
+    .search-wrap {
+        width: 100%;
+        transform: none;
+        order: 3; /* baja debajo */
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* LAYOUT */
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sidebar {
+        order: -1;
+    }
+
+    /* PRODUCTOS */
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+/* --- MEDIA QUERY VERSION MOBILE --- */
+/* --- MEDIA QUERY VERSION MOBILE --- */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    header.navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 10px 4%;
+        height: auto;
+        gap: 8px;
+    }
+
+    .logo,
+    a.logo {
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+
+    /* La barra de búsqueda baja a segunda línea */
+    .search-wrap {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        transform: none;
+        margin: 0;
+        height: 36px;
+        padding: 0 10px;
+    }
+
+    .search-wrap input {
+        font-size: 0.85rem;
+    }
+
+    /* header-right se queda en la misma línea que el logo */
+    .header-right {
+        flex: 1;
+        justify-content: flex-end;
+        width: auto;      /* cancela el width:100% de tablet */
+        gap: 0.7rem;
+    }
+
+    .btn-login-nav {
+        display: block;
+        font-size: 0.78rem;
+    }
+
+    .btn-register-nav {
+        display: flex;
+        padding: 7px 11px;
+        font-size: 0.78rem;
+    }
+
+    .nav-icon-link svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* PRODUCTOS */
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .card img {
+        height: 140px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-size: 0.9rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    .card button {
+        width: 100%;
+        padding: 9px;
+        font-size: 0.85rem;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        padding: 12px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        font-size: 0.78rem;
+        padding-top: 14px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu compra! - NovaShop</title>
+    <link rel="stylesheet" href="../index.html">
+    <link rel="stylesheet" href="/Src/css/stylesgracias.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="../index.html" class="logo">NovaShop</a>
+  <div class="header-right">
+    <a href="../index.html" class="btn-login-nav">Volver al inicio</a>
+  </div>
+</header>
+
+<main class="thanks-main">
+    <div class="thanks-card">
+        <div class="check-icon">
+            <svg width="45" height="45" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+        <h1>¡Pedido Confirmado!</h1>
+        <p>Gracias por confiar en <strong>NovaShop</strong>. Hemos enviado los detalles de tu compra a tu correo electrónico.<br><br>
+        Tu número de pedido es: <span class="order-number" id="order-id">#NS-0000</span></p>
+        
+        <a href="../index.html" class="btn btn-home">Seguir explorando</a>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+ 
+    <div class="footer-col">
+      <h4>NovaShop</h4>
+      <p>Su tienda única para productos de calidad a excelentes precios.</p>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul class="footer-links">
+        <li><a href="/Src/index.html">Inicio</a></li>
+        <li><a href="/Src/categorias.html">Productos</a></li>
+        <li><a href="/Src/carrito.html">Carrito</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul class="footer-links">
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p class="contact-item">Correo: novashopp@gmail.com</p>
+      <p class="contact-item">Telefono: (+57) 322 5714588</p>
+      <p class="contact-item">Direccion: Cra. 26 #28-54, Soledad, Atlántico</p>
+    </div>
+ 
+  </div>
+  <div class="footer-bottom">© 2026 NovaShop. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+    // Generar un número de pedido aleatorio para que se vea real
+    const randomOrder = Math.floor(1000 + Math.random() * 9000);
+    document.getElementById('order-id').textContent = `#NS-${randomOrder}`;
+
+    // LIMPIEZA: Borramos el carrito del almacenamiento local tras la compra
+    localStorage.removeItem('carrito');
+</script>
+
+</body>
+</html>

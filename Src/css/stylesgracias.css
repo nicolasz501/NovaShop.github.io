@@ -1,0 +1,390 @@
+:root {
+    --primary-blue: #004aad;
+    --dark-navy: #0a1128;
+    --bg-light: #f4f7f6;
+    --input-bg: #ededed;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+section {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* --- NAVBAR --- */
+header.navbar {
+    background: #fff;
+    padding: 0.8rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+a.logo {
+    -webkit-text-stroke: 1.55px rgb(1 78 175);
+    text-decoration: underline rgb(1 78 175);
+    font-size: 33px;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border-radius: 20px;
+    padding: 0 15px;
+    width: 400px;
+    height: 40px;
+    transform: translate(95px, 1px);
+}
+
+.search-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px 5px;
+    font-size: 0.9rem;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-login-nav {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-register-nav {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.nav-icon-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #551ab8;
+}
+
+/* --- MAIN --- */
+.thanks-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px 5%;
+    background: #f7f8fa;
+}
+
+/* --- TARJETA --- */
+.thanks-card {
+    background: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.check-icon {
+    width: 80px;
+    height: 80px;
+    background: #16a34a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.thanks-card h1 {
+    color: var(--dark-navy);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.thanks-card p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.order-number {
+    font-weight: bold;
+    color: var(--primary-blue);
+    background: #eef2ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* --- BOTÓN --- */
+.btn {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #222;
+}
+
+.btn-home {
+    min-width: 200px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #0a1128;
+    color: #ccc;
+    padding: 48px 40px 24px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    gap: 40px;
+    padding-bottom: 32px;
+}
+
+.footer-col h4 {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-size: .85rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact-item {
+    font-size: .85rem;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 24px auto 0;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: .82rem;
+}
+
+/* =============================================
+   MEDIA QUERIES — TABLET (max-width: 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+
+    header.navbar {
+        padding: 0.8rem 3%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .search-wrap {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        transform: none;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .header-right {
+        gap: 1rem;
+    }
+
+    .thanks-card {
+        padding: 40px 32px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    footer {
+        padding: 36px 28px 20px;
+        margin-top: 60px;
+    }
+}
+
+/* =============================================
+   MEDIA QUERIES — MOBILE (max-width: 600px)
+   ============================================= */
+@media (max-width: 600px) {
+
+    /* Navbar */
+    header.navbar {
+        padding: 0.75rem 4%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .logo,
+    a.logo {
+        font-size: 1.2rem;
+        -webkit-text-stroke: 1.1px rgb(1 78 175);
+        flex-shrink: 0;
+    }
+
+    .search-wrap {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        transform: none;
+        margin: 0;
+        height: 38px;
+        padding: 0 10px;
+    }
+
+    .search-wrap input {
+        font-size: 0.85rem;
+    }
+
+    .header-right {
+        flex: 1;
+        justify-content: flex-end;
+        width: auto;
+        gap: 0.7rem;
+    }
+
+    .btn-login-nav {
+        font-size: 0.78rem;
+    }
+
+    .btn-register-nav {
+        padding: 7px 11px;
+        font-size: 0.78rem;
+    }
+
+    .nav-icon-link svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Tarjeta */
+    .thanks-main {
+        padding: 24px 4%;
+        align-items: flex-start;
+    }
+
+    .thanks-card {
+        padding: 32px 20px;
+        border-radius: 12px;
+    }
+
+    .check-icon {
+        width: 66px;
+        height: 66px;
+    }
+
+    .check-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .thanks-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .thanks-card p {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 13px 20px;
+        font-size: 0.93rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 28px 16px 16px;
+        margin-top: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-col h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        font-size: 0.78rem;
+        padding-top: 16px;
+    }
+}

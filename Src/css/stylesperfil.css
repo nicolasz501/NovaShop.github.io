@@ -282,3 +282,168 @@ a.logo {
  text-decoration: underline rgb(1 78 175);
  font-size: 33px;
 }
+
+/* =============================================
+   MEDIA QUERIES — TABLET (max-width: 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+
+  header.navbar {
+    padding: 0.8rem 3%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .search-wrap {
+    width: 280px;
+    transform: none;
+    order: 3;
+    flex: 1 1 100%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  .header-right {
+    gap: 1rem;
+  }
+
+  .profile-container {
+    margin: 30px auto;
+  }
+
+  .content-wrapper {
+    gap: 20px;
+  }
+
+  .info-card {
+    flex: 1.5;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding: 36px 28px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+/* =============================================
+   MEDIA QUERIES — MOBILE (max-width: 640px)
+   ============================================= */
+@media (max-width: 600px) {
+
+  /* Navbar */
+  header.navbar {
+    padding: 0.7rem 4%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  a.logo {
+    font-size: 1.3rem;
+  }
+
+  .search-wrap {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    transform: none;
+    margin: 0;
+    height: 38px;
+  }
+
+  .header-right {
+    gap: 0.8rem;
+  }
+
+  .btn-login-nav {
+    font-size: 0.82rem;
+  }
+
+  .btn-register-nav {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Perfil */
+  .profile-container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .profile-container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+
+  /* Las dos tarjetas se apilan verticalmente */
+  .content-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .info-card,
+  .actions-card {
+    width: 100%;
+    padding: 18px 14px;
+  }
+
+  .actions-card {
+    text-align: left;
+  }
+
+  /* Formulario: de 2 columnas a 1 columna */
+  .profile-form {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-group input {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  .card-header i {
+    font-size: 24px;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+  }
+
+  .btn-outline,
+  .btn-logout,
+  .btn-admin {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 50px;
+    padding: 28px 16px 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 0.78rem;
+    padding-top: 16px;
+  }
+}

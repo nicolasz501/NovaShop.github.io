@@ -1,111 +1,105 @@
 :root {
-    --primary-blue: #004aad;
-    --dark-navy: #0a1128;
-    --bg-light: #f4f7f6;
-    --input-bg: #ededed;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+  --primary-blue: #004aad;
+  --dark-navy: #0a1128;
+  --bg-light: #f4f7f6;
+  --input-bg: #ededed;
 }
 
 section {
-    width: 100%;
-    max-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* --- NAVBAR  --- */
 header.navbar {
-    background: #fff;
-    padding: 0.8rem 5%;
-    display: flex;
-    align-items: center; 
-    justify-content: space-between;
-    border-bottom: 1px solid #eee;
-    height: 70px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background: #fff;
+  padding: 0.8rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .search-wrap {
-    display: flex;
-    align-items: center;
-    background: var(--input-bg);
-    border-radius: 20px;
-    padding: 0 15px;
-    width: 400px;
-    height: 40px;
-    transform: translate(95px, 1px);
-    
+  display: flex;
+  align-items: center;
+  background: var(--input-bg);
+  border-radius: 20px;
+  padding: 0 15px;
+  width: 400px;
+  height: 40px;
+  transform: translate(95px, 1px);
 }
 
 .search-wrap input {
-    background: transparent;
-    border: none;
-    outline: none;
-    flex: 1;
-    padding: 8px 5px;
-    font-size: 0.9rem;
-    
+  background: transparent;
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px 5px;
+  font-size: 0.9rem;
 }
 
 .search-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #555;
-    
-
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .btn-login-nav {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-    font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .btn-register-nav {
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    transition: 0.3s;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
 }
 
 .nav-icon-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .nav-icon-link {
   color: #551ab8;
 }
-
 
 /* --- MAIN (Contenedor del Login) --- */
 main {
@@ -265,3 +259,135 @@ a.logo {
  font-size: 33px;
 }
 
+/* =============================================
+   MEDIA QUERIES — TABLET
+   ============================================= */
+@media (max-width: 1024px) {
+
+  header.navbar {
+    padding: 0.8rem 3%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .search-wrap {
+    width: 280px;
+    transform: none;
+    order: 3;
+    flex: 1 1 100%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  .header-right {
+    gap: 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding: 36px 28px 20px;
+  }
+}
+
+/* =============================================
+   MEDIA QUERIES — MOBILE 
+   ============================================= */
+@media (max-width: 600px) {
+
+  /* Navbar */
+  header.navbar {
+    padding: 0.7rem 4%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: sticky;
+    top: 0;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  a.logo {
+    font-size: 1.3rem;
+  }
+
+  .search-wrap {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    transform: none;
+    margin: 0;
+    height: 38px;
+  }
+
+  .header-right {
+    gap: 0.8rem;
+  }
+
+  .btn-login-nav {
+    font-size: 0.82rem;
+  }
+
+  .btn-register-nav {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Main / Login card */
+  main {
+    padding: 1.2rem 1rem;
+    align-items: flex-start;
+  }
+
+  .login-card {
+    max-width: 100%;
+    padding: 1.8rem 1.2rem;
+    border-radius: 12px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-sub {
+    font-size: 0.85rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .form-group input {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  .btn-submit {
+    padding: 13px;
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 50px;
+    padding: 28px 16px 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 0.78rem;
+    padding-top: 16px;
+  }
+}

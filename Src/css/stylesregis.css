@@ -269,3 +269,158 @@ a.logo {
  font-size: 33px;
 }
 
+/* =============================================
+   MEDIA QUERIES — TABLET (max-width: 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+
+  header.navbar {
+    padding: 0.8rem 3%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .search-wrap {
+    width: 280px;
+    transform: none;
+    order: 3;
+    flex: 1 1 100%;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  .header-right {
+    gap: 1rem;
+  }
+
+  .register-card {
+    max-width: 580px;
+    padding: 32px;
+  }
+
+  footer {
+    margin-top: 80px;
+    padding: 36px 28px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+/* =============================================
+   MEDIA QUERIES — MOBILE (max-width: 640px)
+   ============================================= */
+@media (max-width: 600px) {
+
+  /* Navbar */
+  header.navbar {
+    padding: 0.7rem 4%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  a.logo {
+    font-size: 1.3rem;
+  }
+
+  .search-wrap {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    transform: none;
+    margin: 0;
+    height: 38px;
+  }
+
+  .header-right {
+    gap: 0.8rem;
+  }
+
+  .btn-login-nav {
+    font-size: 0.82rem;
+  }
+
+  .btn-register-nav {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Main / Register card */
+  main {
+    padding: 1.2rem 1rem;
+    align-items: flex-start;
+  }
+
+  .register-card {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .register-header {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .icon-user {
+    font-size: 24px;
+  }
+
+  .header-text h1 {
+    font-size: 18px;
+  }
+
+  .header-text p {
+    font-size: 12px;
+  }
+
+  /* Formulario: de 2 columnas a 1 columna */
+  .register-form {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .btn-register {
+    grid-column: span 1;
+    padding: 13px;
+    font-size: 0.95rem;
+    margin-top: 10px;
+  }
+
+  .footer-link {
+    grid-column: span 1;
+  }
+
+  .form-group input {
+    padding: 11px;
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 50px;
+    padding: 28px 16px 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 0.78rem;
+    padding-top: 16px;
+  }
+}
