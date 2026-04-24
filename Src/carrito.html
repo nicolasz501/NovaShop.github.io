@@ -137,7 +137,17 @@
 
 // Leer carrito desde localStorage
 function obtenerCarrito() {
-  return JSON.parse(localStorage.getItem('carrito') || '[]');
+  const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
+  const carritoNormalizado = carrito.map(item => ({
+    ...item,
+    imagen: item.imagen ? item.imagen.replace(/^\.\.\/img\//, 'img/') : item.imagen
+  }));
+
+  if (JSON.stringify(carritoNormalizado) !== JSON.stringify(carrito)) {
+    guardarCarrito(carritoNormalizado);
+  }
+
+    return carritoNormalizado;
 }
 
 // Guardar carrito en localStorage
