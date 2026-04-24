@@ -1,0 +1,277 @@
+:root {
+    --primary-blue: #004aad;
+    --dark-navy: #0a1128;
+    --bg-light: #f4f7f6;
+    --input-bg: #ededed;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* --- NAVBAR  --- */
+header.navbar {
+    background: #fff;
+    padding: 0.8rem 5%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border-radius: 20px;
+    padding: 0 15px;
+    width: 400px;
+    height: 40px;
+    transform: translate(95px, 1px);
+    
+}
+
+.search-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px 5px;
+    font-size: 0.9rem;
+    
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    
+
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+}
+
+.btn-login-nav {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-register-nav {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.nav-icon-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-icon-link {
+  color: #551ab8;
+}
+
+
+/* LAYOUT */
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.sidebar li {
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sidebar li:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+
+
+/* CONTENEDOR DE PRODUCTOS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: stretch; /* Asegura que todas las cards de una fila midan lo mismo */
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+    text-align: left;
+    
+    /* Agregamos Flexbox a la card para controlar el espacio interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain; /* Cambiado a contain para que el producto no se corte */
+    background-color: #f9f9f9; /* Fondo suave para resaltar el producto */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* CONTENEDOR DE TEXTO (Para que los títulos no muevan todo) */
+.card-body {
+    flex-grow: 1; /* Este contenedor ocupa todo el espacio sobrante */
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 { /* Título del producto */
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #333;
+}
+
+.card h4 { /* Precio */
+    color: #0937ce; /* El azul característico de NovaShop */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* BOTÓN SIEMPRE AL FINAL */
+.card button {
+    width: 100%; /* Botón ancho completo se ve más ordenado */
+    padding: 10px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background: #333;
+}
+
+
+
+footer {
+    background: #0a1128; /* Un azul muy oscuro para que combine mejor */
+    color: #ccc;
+    padding: 48px 40px 24px;
+    margin-top: 150px;
+}
+
+.footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    gap: 40px;
+    padding-bottom: 32px;
+}
+
+.footer-col h4 {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0; /* Limpiar padding por defecto */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-size: .85rem;
+    color: #aaa;
+    text-decoration: none; /* Mejor sin subrayado por defecto */
+    transition: color .15s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 24px auto 0;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: .82rem;
+}
+
+a.logo {
+-webkit-text-stroke: 1.55px rgb(1 78 175);
+ text-decoration: underline rgb(1 78 175);
+ font-size: 33px;
+}
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaShop</title>
+    <link rel="stylesheet" href="/Src/css/index.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <a href="index.html" class="logo">NovaShop</a>
+
+  <div class="search-wrap">
+    <input type="search" placeholder="Search"/>
+    <button class="search-btn" aria-label="Buscar">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="header-right">
+    <a href="/Src/carrito.html" class="nav-icon-link">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+        
+      </svg>
+    </a>
+    <a href="/Src/miperfil.html" class="nav-icon-link">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </a>
+    <a href="/Src/iniciarsis.html" class="btn-login-nav">Iniciar sesion</a>
+    <a href="/Src/registrarse.html" class="btn-register-nav">Registrarse</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Bienvenido a NovaShop</h1>
+        <li>Descubre productos increíbles a precios inmejorables. Compra las últimas tendencias y clásicos temporales.</li>
+        <a href="/Src/categorias.html" class="btn">Compra ahora</a>
+    </div>
+</section>
+
+<!-- PRODUCTOS DESTACADOS - ACTUALIZADO -->
+<section class="productos">
+    <h2>Productos Destacados</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="/Src/img/relog.jpg" alt="Reloj inteligente">
+            <h3>Reloj inteligente</h3>
+            <p>$299.99</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=1'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/audifonos.jpg" alt="Auriculares inalámbricos">
+            <h3>Auriculares inalámbricos</h3>
+            <p>$89.9</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=2'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/mochila.jpg" alt="Mochila para portátil">
+            <h3>Mochila para portátil</h3>
+            <p>$49.9</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=3'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/parlante.jpg" alt="Altavoz portátil">
+            <h3>Altavoz portátil</h3>
+            <p>$59.9</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=4'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/zapatos.jpg" alt="Zapatos para correr">
+            <h3>Zapatos para correr</h3>
+            <p>$129.99</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=5'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/estera de yoga.jpg" alt="Estera de yoga">
+            <h3>Estera de yoga</h3>
+            <p>$34.99</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=6'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/cafe.jpg" alt="Cafetera">
+            <h3>Cafetera</h3>
+            <p>$79.99</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=7'">Ver detalles</button>
+        </div>
+
+        <div class="card">
+            <img src="/Src/img/lampara.jpg" alt="Lámpara de escritorio">
+            <h3>Lámpara de escritorio</h3>
+            <p>$39.99</p>
+            <button onclick="window.location.href='/Src/productoimpc.html?id=8'">Ver detalles</button>
+        </div>
+
+    </div>
+
+    <div class="ver-todo">
+        <a href="/Src/categorias.html">ver todos los productos</a>
+    </div>
+
+</section>
+
+<footer>
+  <div class="footer-grid">
+ 
+    <div class="footer-col">
+      <h4>NovaShop</h4>
+      <p>Su tienda única para productos de calidad a excelentes precios.</p>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul class="footer-links">
+        <li><a href="/Src/index.html">Inicio</a></li>
+        <li><a href="/Src/categorias.html">Productos</a></li>
+        <li><a href="/Src/carrito.html">Carrito</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul class="footer-links">
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p class="contact-item">Correo: novashopp@gmail.com</p>
+      <p class="contact-item">Telefono: (+57) 322 5714588</p>
+      <p class="contact-item">Direccion: Cra. 26 #28-54, Soledad, Atlántico</p>
+    </div>
+ 
+  </div>
+  <div class="footer-bottom">© 2026 NovaShop. Todos los derechos reservados.</div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - NovaShop</title>
+    <link rel="stylesheet" href="css/stylescarrito.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <a href="../index.html" class="logo">NovaShop</a>
+
+  <div class="search-wrap">
+    <input type="search" placeholder="Search"/>
+    <button class="search-btn" aria-label="Buscar">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="header-right">
+    
+    <a href="miperfil.html" class="nav-icon-link">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    </a>
+    <a href="iniciarsis.html" class="btn-login-nav">Iniciar sesion</a>
+    <a href="registrarse.html" class="btn-register-nav">Registrarse</a>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="cart-main">
+
+  <!-- Estado vacío (se oculta si hay productos) -->
+  <div class="cart-empty" id="cart-empty">
+    <div class="cart-icon-big">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+    </div>
+    <h1 class="cart-title">Tu carrito está vacío</h1>
+    <p class="cart-subtitle">Parece que aún no has añadido<br>ningún artículo a tu carrito.</p>
+    <a href="../index.html" class="btn-shop">Compra ahora</a>
+  </div>
+
+  <!-- Contenido del carrito (se muestra si hay productos) -->
+  <div class="cart-content" id="cart-content" style="display:none;">
+    <h1 class="cart-heading">Tu carrito</h1>
+
+    <div class="cart-layout">
+
+      <!-- Lista de productos -->
+      <div class="cart-items" id="cart-items">
+        <!-- Se llena con JS -->
+      </div>
+
+      <!-- Resumen del pedido -->
+      <div class="cart-summary">
+        <h2>Resumen del pedido</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Envío</span>
+          <span class="envio-gratis">Gratis</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="summary-total">$0.00</span>
+        </div>
+
+       <button class="btn-checkout" onclick="irAlCheckout()">Proceder al pago</button>
+        <a href="categorias.html" class="btn-continue">← Seguir comprando</a>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+ 
+    <div class="footer-col">
+      <h4>NovaShop</h4>
+      <p>Su tienda única para productos de calidad a excelentes precios.</p>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul class="footer-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="categorias.html">Productos</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul class="footer-links">
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p class="contact-item">Correo: novashopp@gmail.com</p>
+      <p class="contact-item">Telefono: (+57) 322 5714588</p>
+      <p class="contact-item">Direccion: Cra. 26 #28-54, Soledad, Atlántico</p>
+    </div>
+ 
+  </div>
+  <div class="footer-bottom">© 2026 NovaShop. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+/* =============================================
+   CARRITO.JS — lógica interna
+   ============================================= */
+
+// Leer carrito desde localStorage
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem('carrito') || '[]');
+}
+
+// Guardar carrito en localStorage
+function guardarCarrito(carrito) {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Eliminar un producto por id
+function eliminarProducto(id) {
+  const carrito = obtenerCarrito().filter(item => item.id !== id);
+  guardarCarrito(carrito);
+  renderizarCarrito();
+}
+
+// Cambiar cantidad desde el input
+function cambiarCantidad(id, nuevaCantidad) {
+  const carrito = obtenerCarrito();
+  const item = carrito.find(p => p.id === id);
+  if (item) {
+    item.cantidad = Math.max(1, parseInt(nuevaCantidad) || 1);
+    guardarCarrito(carrito);
+    renderizarCarrito();
+  }
+}
+
+// Renderizar todo el carrito
+function renderizarCarrito() {
+  const carrito   = obtenerCarrito();
+  const empty     = document.getElementById('cart-empty');
+  const content   = document.getElementById('cart-content');
+  const itemsCont = document.getElementById('cart-items');
+
+  if (carrito.length === 0) {
+    empty.style.display   = 'block';
+    content.style.display = 'none';
+    return;
+  }
+
+  empty.style.display   = 'none';
+  content.style.display = 'block';
+
+  // Generar filas de productos
+  itemsCont.innerHTML = carrito.map(item => `
+    <div class="cart-item">
+      <img src="${item.imagen}" alt="${item.nombre}" class="item-img" />
+
+      <div class="item-info">
+        <p class="item-name">${item.nombre}</p>
+        <p class="item-price">$${item.precio.toFixed(2)}</p>
+      </div>
+
+      <div class="item-qty">
+        <button class="qty-sm" onclick="cambiarCantidad(${item.id}, ${item.cantidad - 1})">-</button>
+        <span>${item.cantidad}</span>
+        <button class="qty-sm" onclick="cambiarCantidad(${item.id}, ${item.cantidad + 1})">+</button>
+      </div>
+
+      <p class="item-subtotal">$${(item.precio * item.cantidad).toFixed(2)}</p>
+
+      <button class="btn-eliminar" onclick="eliminarProducto(${item.id})" title="Eliminar">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="3 6 5 6 21 6"/>
+          <path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/>
+          <path d="M10 11v6M14 11v6"/>
+          <path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/>
+        </svg>
+      </button>
+    </div>
+  `).join('');
+
+  // Calcular total
+  const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
+  document.getElementById('summary-subtotal').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('summary-total').textContent    = `$${total.toFixed(2)}`;
+}
+
+function irAlCheckout() {
+  const carrito = obtenerCarrito(); // Usamos la función que ya tienes creada
+  
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío. Añade algunos productos de NovaShop para continuar.");
+  } else {
+    // Redirige a la página que creamos
+    window.location.href = 'checkout.html';
+  }
+}
+
+// Iniciar al cargar la página
+renderizarCarrito();
+</script>
+
+</body>
+</html>
